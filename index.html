@@ -14,22 +14,28 @@
     <header class="container">
         <div class="headerWrapper d-flex align-items-center">
             <div class="logo ">
-                <img src="./images/logo.png" alt="Logo" />
+                <img src="./images/logo.webp" alt="Logo" />
             </div>
 
             <div class="searchContent d-flex justify-between align-items-center w-100">
                 <h2 class="headings">City of Testville</h2>
-                <div class="search relative">
+                <div class="search relative d-flex align-items-center gap-6">
                     <input type="text" />
                     <button>
-                        <img src="./images/search.png" alt="Search" />
+                        <img src="./images/search.webp" alt="Search" />
                     </button>
                 </div>
             </div>
+            <!-- burger menu -->
+            <button class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
     <!-- Nav bar -->
-    <nav class="container">
+    <nav class="container mobile-nav">
         <ul class="d-flex gap-20">
             <li>
                 <a href="/">Home</a>
@@ -107,27 +113,31 @@
                     traffic and parking restrictions.
                 </div>
                 <div class="subscribe-input">
-                    <div class="subscribe-input-user d-flex gap-30">
-                        <div>
-                            <label for="">Name</label>
-                            <input type="text" name="" id="" />
+                    <form>
+                        <div class="subscribe-input-user d-flex gap-30">
+                            <div>
+                                <label for="">Name</label>
+                                <input type="text" name="" id="" required />
+                            </div>
+
+                            <div>
+                                <label for="">Phone Number</label>
+                                <input type="text" name="" id="" required />
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="">Phone Number</label>
-                            <input type="text" name="" id="" />
+                        <div class="subscribe-input-email inline-block w-100">
+                            <div class="d-flex justify-between align-self-end gap-30">
+                                <div class="flex-1">
+                                    <label for="">Email address</label>
+                                    <input type="email" name="" id="" required />
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn">Submit</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="subscribe-input-email inline-block w-100">
-                        <div>
-                            <label for="">Email address</label>
-                        </div>
-                        <div class="d-flex gap-30">
-                            <input type="text" name="" id="" />
-                            <button class="btn">Submit</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -135,43 +145,65 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi fuga inventore ipsa quos praesentium beatae,
-        autem facere quasi porro maxime. Dolores velit similique omnis deleniti at dignissimos tenetur sint est
-        veritatis iure, distinctio laudantium eligendi voluptas perferendis assumenda magni. Perspiciatis soluta nemo,
-        et aut iure dolore quidem officiis ea hic aspernatur. Quasi excepturi eum, omnis pariatur, porro ut vero
-        necessitatibus numquam, vitae iusto ipsam exercitationem eveniet aspernatur aut impedit quisquam aperiam
-        voluptate hic! Consectetur, dolor totam, quidem tempore dicta delectus animi asperiores cumque esse maiores,
-        dignissimos iste aut? Suscipit, ducimus nisi doloribus delectus numquam illum eveniet labore ratione possimus
-        eum, vel tenetur voluptate optio molestias corporis sit. At temporibus consectetur optio illo cum iste, est
-        deserunt repudiandae incidunt? Nostrum nisi molestias tenetur iusto non numquam aspernatur? Unde deleniti
-        molestiae quo nam inventore molestias corrupti quod rem placeat voluptatum veritatis, facere libero in nesciunt
-        dolore architecto. Delectus sit id cum excepturi maiores autem nulla iste temporibus atque nobis sapiente ea in,
-        voluptas tempore fugit, possimus quidem officia minima voluptatibus dolores. Aut porro dignissimos reprehenderit
-        recusandae voluptas temporibus ratione, cupiditate dolor nesciunt rerum unde mollitia placeat vitae, reiciendis
-        ut eveniet eius saepe. Beatae in nobis, eius rem molestias voluptates ullam doloribus, aspernatur excepturi
-        dignissimos rerum molestiae nihil, minus architecto optio voluptate temporibus. Aliquid aperiam voluptatum
-        excepturi, esse est doloribus, eligendi similique autem quisquam a officia accusamus architecto explicabo
-        reprehenderit libero. Consectetur error dolorum excepturi quisquam nihil totam, consequuntur assumenda
-        consequatur, unde, quia atque. Molestias, quia nisi, atque facilis ducimus neque eligendi voluptatem nobis
-        magnam odit laudantium quam hic maiores nesciunt dolor dolores exercitationem distinctio deleniti veniam ad
-        nulla error esse voluptatum placeat? Magni temporibus libero atque labore! Natus reiciendis veritatis, labore
-        commodi eligendi quos officia obcaecati aperiam pariatur nulla reprehenderit, fuga cumque saepe. Totam laborum
-        deleniti voluptates omnis praesentium tempora quos modi necessitatibus laudantium dolor, dicta aspernatur minus
-        sint recusandae vitae obcaecati ex ullam repellendus, quas similique nihil. Totam iusto voluptatum saepe ea vero
-        modi? Sed id facere modi tempora officiis distinctio laudantium, fugiat vel ea! Error eius, id at doloremque
-        dolorum alias ex laboriosam quam! Omnis nihil vero modi. Ratione, eius quas nisi explicabo corrupti in
-        repudiandae eligendi doloribus quis sit! Iusto nesciunt fuga alias, nulla nobis voluptatem sint adipisci
-        inventore ducimus maxime, quos voluptate libero culpa distinctio illum recusandae, repellat explicabo ea?
-        Dolorem obcaecati distinctio, fugit reiciendis nobis quas explicabo ad cupiditate sapiente ipsa maiores magni
-        possimus optio, corrupti nihil? Dicta, cum dolore quod unde amet nisi! Facilis optio a consequatur eaque
-        blanditiis. Iure ipsum cupiditate alias consequuntur similique deleniti laudantium eveniet enim, ex, asperiores
-        necessitatibus officia vero maxime, beatae quo illo ullam cumque unde. Voluptate ex tenetur explicabo unde
-        animi. Labore debitis voluptas necessitatibus, dolores ab voluptatem sit dolorum quo impedit eius voluptate
-        autem reiciendis, alias ipsa dignissimos porro ea asperiores aliquid. Quas ducimus nam rerum beatae! Odit
-        dolorum laborum ducimus unde consectetur quos voluptatem nemo reiciendis eius tempore dolore velit voluptas
-        asperiores doloremque architecto quam odio, quae, suscipit quas impedit. Itaque quod dolore perspiciatis enim
-        eum voluptas nam.
+    <footer>
+        <div class="footer-like d-flex justify-between">
+            <div class="d-flex gap-10 align-items-center like-dislike">
+                <span>Was this Page Helpful?</span>
+                <button>
+                    <img src="./images/like.webp" alt="Like">
+                </button>
+                <button>
+                    <img src="./images/dislike.webp" alt="Dislike">
+                </button>
+            </div>
+            <div>
+                <span>Last Updated on Jan 26, 2024 at 11:56AM</span>
+            </div>
+        </div>
+        <div class="footer-logo d-flex justify-between">
+            <div class="d-flex gap-80">
+                <div>
+                    <div><img src="./images/logo.webp" alt="Logo Footer"></div>
+                    <div>City of Willowbay</div>
+                    <div class="d-flex column">
+                        <span>Testville City Hall</span>
+                        <span>123 Main Street</span>
+                        <span>Testville, NY 13601</span>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/">Government</a>
+                        </li>
+                        <li>
+                            <a href="/">Boards</a>
+                        </li>
+                        <li>
+                            <a href="/">Departments</a>
+                        </li>
+                        <li>
+                            <a href="/">Community</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer Hero Items - ALSO forEatched ! -->
+                <div class="footer-hero-content"></div>
+            </div>
+
+            <div class="subscribe-updates d-flex gap-6">
+                <input type="text" required />
+                <button>Subscribe to Updates</button>
+            </div>
+        </div>
+        <div class="copyright d-flex justify-between">
+            <span>© 2024 Designed & Hosted by Town Web</span>
+            <span> Accessibility | Privacy Policy</span>
+        </div>
     </footer>
 
 

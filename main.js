@@ -1,5 +1,8 @@
 import { heroItems, eventsItems, newsItems, recordingsItems } from "./data.js";
 
+const burger = document.querySelector('.burger');
+const mobileNav = document.querySelector('.mobile-nav');
+
 // SLIDER
 const slides = document.querySelector('.slides');
 const totalSlides = document.querySelectorAll('.slide').length;
@@ -37,6 +40,13 @@ const resetAutoSlide = () => {
 };
 // END OF SLIDER
 
+// Burger
+burger.addEventListener('click', () => {
+    burger.classList.toggle('is-active');
+    mobileNav.classList.toggle('is-active');
+    document.body.classList.toggle('overflow-hidden');
+});
+// End of burger
 
 // Hero Items
 const heroContent = document.querySelector('.hero-content');
@@ -95,7 +105,7 @@ let listOfNews = '';
 
 newsItems.forEach((item) => {
     listOfNews += `
-        <div class="gap-10">
+        <div>
             <div>
                 <img src="${item.icon}" alt="${item.title}" loading="lazy" />
             </div>
@@ -139,6 +149,24 @@ recordingsItems.forEach((item) => {
 recordingsContent.innerHTML = listOfRecordings;
 // End of recordings
 
+// Footer hero content
+const footerContent = document.querySelector('.footer-hero-content');
+
+let listOfFooterContent = '';
+
+heroItems.forEach((item) => {
+    listOfFooterContent += `
+        <ul>
+            <li>
+                <a>${item.title}</a>
+            </li>
+        </ul>
+    `
+});
+
+footerContent.innerHTML = listOfFooterContent;
+// End of hero content
+
 
 
 // Show More/Hide Contents
@@ -152,10 +180,34 @@ viewAllBtns.forEach((btn) => {
 
         //Change tekst
         if (contentClass.classList.contains('show-more')) {
-            btn.innerText = btn.innerText.replace('View All', 'Hide All'); 
+            btn.innerText = btn.innerText.replace('View All', 'Hide All');
 
         } else {
-            btn.innerText = btn.innerText.replace('Hide All', 'View All'); 
+            btn.innerText = btn.innerText.replace('Hide All', 'View All');
+        }
+    });
+});
+
+
+// Like / Dislike
+let likeDislikeBtn = document.querySelectorAll('.like-dislike button');
+
+likeDislikeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const img = btn.querySelector('img');
+
+        // Check if alredy has that class
+        if (img.classList.contains('brightness')) {
+            // If it does rimove 
+            img.classList.remove('brightness');
+        } else {
+            // Remove 'brightness'
+            likeDislikeBtn.forEach((button) => {
+                const siblingImg = button.querySelector('img');
+                siblingImg.classList.remove('brightness');
+            });
+            // Add 'brightness'
+            img.classList.add('brightness');
         }
     });
 });
