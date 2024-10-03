@@ -226,13 +226,13 @@ const subscribeModal = document.getElementById('subscribeModal');
 const closeSubscribeModal = document.getElementById('closeSubscribeModal');
 
 const handleSubmit = (event) => {
-    event.preventDefault(); // Sprečava ponovno učitavanje stranice
-    subscribeModal.style.display = 'block'; // Prikaz modala
-    document.getElementById('subscribe').value = ''; // Čišćenje polja
+    event.preventDefault(); 
+    subscribeModal.style.display = 'block'; 
+    document.getElementById('subscribe').value = ''; 
 };
 
 const handleCloseModal = () => {
-    subscribeModal.style.display = 'none'; // Zatvaranje modala
+    subscribeModal.style.display = 'none'; 
 };
 
 subscribeForm.addEventListener('submit', handleSubmit);
@@ -240,13 +240,10 @@ closeSubscribeModal.addEventListener('click', handleCloseModal);
 
 window.onclick = (event) => {
     if (event.target === subscribeModal) {
-        handleCloseModal(); // Zatvaranje modala ako se klikne izvan njega
+        handleCloseModal(); 
     }
 };
-
 // End of modal
-
-
 
 // Show More/Hide Contents
 let viewAllBtns = document.querySelectorAll('.btn-link');
