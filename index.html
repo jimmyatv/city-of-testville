@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="City of Testville landing page">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Landing Page">
+    <meta name="author" content="Aleksandar Rasic">
     <link rel="stylesheet" href="style.css">
     <title>City of Testville</title>
 </head>
@@ -12,19 +15,20 @@
 
     <!-- Header -->
     <header class="container">
-        <div class="headerWrapper d-flex align-items-center">
-            <div class="logo ">
+        <div class="header-wrapper d-flex align-items-center">
+            <div class="logo">
                 <img src="./images/logo.webp" alt="Logo" />
             </div>
 
             <div class="searchContent d-flex justify-between align-items-center w-100">
                 <h2 class="headings">City of Testville</h2>
-                <div class="search relative d-flex align-items-center gap-6">
-                    <input type="text" />
-                    <button>
+                <form class="search relative d-flex align-items-center gap-6">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text" id="search" name="search" aria-label="Search" />
+                    <button type="submit">
                         <img src="./images/search.webp" alt="Search" />
                     </button>
-                </div>
+                </form>
             </div>
             <!-- burger menu -->
             <button class="burger">
@@ -41,25 +45,84 @@
                 <a href="/">Home</a>
             </li>
             <li>
-                <a href="/">Government</a>
+                <button>
+                    Government
+                    <img src="./images/chevron-down.svg" alt="Chevron down" />
+                </button>
+                <ul class="dropdown">
+                    <li>
+                        <a href="/government/policies">Policies</a>
+                    </li>
+                    <li>
+                        <a href="/government/services">Services</a>
+                    </li>
+                    <li>
+                        <a href="/government/reports">Reports</a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="/">Boards</a>
+                <button>
+                    Boards
+                    <img src="./images/chevron-down.svg" alt="Chevron down" />
+                </button>
+                <ul class="dropdown">
+                    <li>
+                        <a href="/boards/management">Management Board</a>
+                    </li>
+                    <li>
+                        <a href="/boards/advisory">Advisory Board</a>
+                    </li>
+                    <li>
+                        <a href="/boards/executive">Executive Board</a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="/">Departments</a>
+                <button>
+                    Departments
+                    <img src="./images/chevron-down.svg" alt="Chevron down" />
+                </button>
+                <ul class="dropdown">
+                    <li>
+                        <a href="/departments/finance">Finance Department</a>
+                    </li>
+                    <li>
+                        <a href="/departments/human-resources">Human Resources</a>
+                    </li>
+                    <li>
+                        <a href="/departments/it">IT Department</a>
+                    </li>
+                    <li>
+                        <a href="/departments/marketing">Marketing Department</a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="/">Community</a>
+                <button>
+                    Community
+                    <img src="./images/chevron-down.svg" alt="Chevron down" />
+                </button>
+                <ul class="dropdown">
+                    <li>
+                        <a href="/community/events">Events</a>
+                    </li>
+                    <li>
+                        <a href="/community/forums">Forums</a>
+                    </li>
+                    <li>
+                        <a href="/community/resources">Resources</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>
 
     <!-- Main -->
-    <main class="container">
-        <section class="hero" id="heroId">
+    <main>
+        <section class="hero container" id="heroId">
             <!-- Slider -->
-            <div class="slider">
+            <div class="slider relative">
                 <div class="slides">
                     <div class="slide">
                         <img src="./images/mainSlider1.webp" alt="Main slider 1" loading="lazy" decoding="async" />
@@ -68,14 +131,17 @@
                         <img src="./images/mainSlider2.webp" alt="Main slider 2" loading="lazy" decoding="async" />
                     </div>
                 </div>
-
+                <div class="hey-ville d-flex">
+                    <img src="./images/hey-img.svg" alt="Hey Ville">
+                    <span>HeyVille Park</span>
+                </div>
             </div>
             <!-- Hero -->
             <div class="hero-content d-flex gap-10"></div>
         </section>
 
         <!-- Events -->
-        <section class="upcoming-events" id="upcoming-eventsId">
+        <section class="upcoming-events container" id="upcoming-eventsId">
             <div class="d-flex justify-between align-items-center">
                 <h2 class="headings">Upcoming Events</h2>
                 <button class="btn-link">View All Events</button>
@@ -85,7 +151,7 @@
         </section>
 
         <!-- News -->
-        <section class="news" id="newsId">
+        <section class="news container" id="newsId">
             <div class="d-flex justify-between align-items-center">
                 <h2 class="headings">News</h2>
                 <button class="btn-link">View All Posts</button>
@@ -95,10 +161,10 @@
         </section>
 
         <!-- Recordings -->
-        <section class="recordings" id="recordingsId">
+        <section class="recordings container" id="recordingsId">
             <div class="d-flex justify-between align-items-center">
-                <h2 class="headings">Recordings</h2>
-                <button class="btn-link">View All Posts</button>
+                <h2 class="headings">Latest Recordings</h2>
+                <button class="btn-link">View All Videos</button>
             </div>
 
             <div class="recordings-content"></div>
@@ -106,38 +172,40 @@
 
         <!-- Subscribe -->
         <section class="subscribe">
-            <h2>Stay Connected</h2>
-            <div class="subscribe-content d-flex gap-60">
-                <div class="subscribe-title card-headings">
-                    Sign up for updates from the City of Testville, including information on big events and upcoming
-                    traffic and parking restrictions.
-                </div>
-                <div class="subscribe-input">
-                    <form>
-                        <div class="subscribe-input-user d-flex gap-30">
-                            <div>
-                                <label for="">Name</label>
-                                <input type="text" name="" id="" required />
-                            </div>
-
-                            <div>
-                                <label for="">Phone Number</label>
-                                <input type="text" name="" id="" required />
-                            </div>
-                        </div>
-
-                        <div class="subscribe-input-email inline-block w-100">
-                            <div class="d-flex justify-between align-self-end gap-30">
-                                <div class="flex-1">
-                                    <label for="">Email address</label>
-                                    <input type="email" name="" id="" required />
-                                </div>
+            <div class="container">
+                <h2>Stay Connected</h2>
+                <div class="subscribe-content d-flex gap-60">
+                    <div class="subscribe-title card-headings">
+                        Sign up for updates from the City of Testville, including information on big events and upcoming
+                        traffic and parking restrictions.
+                    </div>
+                    <div class="subscribe-input">
+                        <form>
+                            <div class="subscribe-input-user d-flex gap-30">
                                 <div>
-                                    <button type="submit" class="btn">Submit</button>
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" required />
+                                </div>
+
+                                <div>
+                                    <label for="phone">Phone Number</label>
+                                    <input type="text" name="phone" id="phone" required />
                                 </div>
                             </div>
-                        </div>
-                    </form>
+
+                            <div class="subscribe-input-email inline-block w-100">
+                                <div class="d-flex justify-between align-self-end gap-30">
+                                    <div class="flex-1">
+                                        <label for="email">Email address</label>
+                                        <input type="email" name="email" id="email" required />
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -163,7 +231,7 @@
         <div class="footer-logo d-flex justify-between">
             <div class="d-flex gap-80">
                 <div>
-                    <div><img src="./images/logo.webp" alt="Logo Footer"></div>
+                    <div><img src="./images/logo.webp" alt="Logo Footer" class="footer-logo-img"></div>
                     <div>City of Willowbay</div>
                     <div class="d-flex column">
                         <span>Testville City Hall</span>
@@ -174,19 +242,19 @@
                 <div>
                     <ul>
                         <li>
-                            <a href="/">Home</a>
+                            <a href="/home">Home</a>
                         </li>
                         <li>
-                            <a href="/">Government</a>
+                            <a href="/government">Government</a>
                         </li>
                         <li>
-                            <a href="/">Boards</a>
+                            <a href="/boards">Boards</a>
                         </li>
                         <li>
-                            <a href="/">Departments</a>
+                            <a href="/departments">Departments</a>
                         </li>
                         <li>
-                            <a href="/">Community</a>
+                            <a href="/community">Community</a>
                         </li>
                     </ul>
                 </div>
@@ -195,13 +263,23 @@
                 <div class="footer-hero-content"></div>
             </div>
 
-            <div class="subscribe-updates d-flex gap-6">
-                <input type="text" required />
-                <button>Subscribe to Updates</button>
+            <form>
+                <div class="subscribe-updates d-flex justify-center gap-6">
+                    <input type="email" id="subscribe" name="subscribe" required />
+                    <button>Subscribe to Updates</button>
+                </div>
+            </form>
+            <!-- Modal -->
+            <div id="subscribeModal" class="modal">
+                <div class="modal-content relative">
+                    <span class="close" id="closeSubscribeModal">X</span>
+                    <p>Thank you for subscribing!</p>
+                </div>
             </div>
+
         </div>
         <div class="copyright d-flex justify-between">
-            <span>© 2024 Designed & Hosted by Town Web</span>
+            <span>© <span class="current-year"></span> Designed & Hosted by Town Web</span>
             <span> Accessibility | Privacy Policy</span>
         </div>
     </footer>

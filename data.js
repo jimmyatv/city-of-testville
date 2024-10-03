@@ -2,26 +2,31 @@
 export const heroItems = [
     {
         icon: './images/alert.webp',
+        url: '/notices',
         title: 'Notices',
         subtitle: 'See all recent emergency notices'
     },
     {
         icon: './images/bell.webp',
+        url: '/subscribe',
         title: 'Subscribe',
         subtitle: 'Get notifications via email or SMS'
     },
     {
-        icon: './images/dollar.webp',
+        icon: './images/bill.webp',
+        url: '/bills',
         title: 'Pay Bills',
         subtitle: 'Pay all municipal bills instantly'
     },
     {
         icon: './images/issue.webp',
+        url: '/non-emergency',
         title: '311',
         subtitle: 'Report any non-emergency issues'
     },
     {
         icon: './images/truck.webp',
+        url: '/street-cleaning',
         title: 'Street Cleaning',
         subtitle: 'Access the street cleaning schedule'
     },
@@ -32,6 +37,9 @@ export const heroItems = [
 export const eventsItems = [
     {
         icon: './images/dateImg1.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'City Council Meeting',
         date: 'Monday, January 8, 2024',
         time: '7:00 PM',
@@ -39,6 +47,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg2.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'Food Policy Council Meeting',
         date: 'Friday, January 12, 2024',
         time: '4:00 PM',
@@ -46,6 +57,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg3.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'Misc. Matters Committee Meeting',
         date: 'Monday, January 15, 2024',
         time: '7:00 PM',
@@ -53,6 +67,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg1.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'City Council Meeting',
         date: 'Monday, January 8, 2024',
         time: '7:00 PM',
@@ -60,6 +77,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg2.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'Food Policy Council Meeting',
         date: 'Friday, January 12, 2024',
         time: '4:00 PM',
@@ -67,11 +87,14 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg3.webp',
+        icon2: './images/date.svg',
+        icon3: './images/clock.svg',
+        icon4: './images/location.svg',
         title: 'Misc. Matters Committee Meeting',
         date: 'Monday, January 15, 2024',
         time: '7:00 PM',
         location: 'Virtual'
-    }   
+    }
 ];
 
 // News Items list

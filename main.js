@@ -44,7 +44,6 @@ const resetAutoSlide = () => {
 burger.addEventListener('click', () => {
     burger.classList.toggle('is-active');
     mobileNav.classList.toggle('is-active');
-    document.body.classList.toggle('overflow-hidden');
 });
 // End of burger
 
@@ -79,16 +78,25 @@ let listOfUpcomingEvents = '';
 eventsItems.forEach((item) => {
     listOfUpcomingEvents += `
         <div class="d-flex gap-10">
-            <div>
+            <div class='events-img'>
                 <img src="${item.icon}" alt="${item.title}" loading="lazy" />
             </div>
 
             <div>
-                <p class='text-bold'>${item.title}</p>
+                <h3 class='text-bold'>${item.title}</h3>
                 <div class='events-wrapper'>
-                    <p>${item.date}</p>
-                    <p>${item.time}</p>
-                    <p>${item.location}</p>
+                    <div class='d-flex align-items-center'>
+                            <img class='img-d-none' src="${item.icon2}" alt="${item.title}" loading="lazy" />
+                        <span>${item.date}</span>
+                    </div>
+                    <div class='d-flex align-items-center'>
+                        <img src="${item.icon3}" alt="${item.title}" loading="lazy" />
+                       <span> ${item.time}</span>
+                    </div>
+                    <div class='d-flex align-items-center'>
+                        <img src="${item.icon4}" alt="${item.title}" loading="lazy" />
+                        <span>${item.location}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,11 +139,14 @@ recordingsItems.forEach((item) => {
     listOfRecordings += `
         <div class="recording-item gap-10">
             <div class='relative'>
-                <video controls poster="${item.thumbnail}" width="340" height="175" controlsList="nodownload noremoteplayback" disablePictureInPicture>
+                <div class="video-overlay">
+                    <img class="vPlay" src="./images/play.svg" />
+                </div>
+                <video poster="${item.thumbnail}" class="video-grayscale" width="340" height="175" controlsList="nodownload noremoteplayback" disablePictureInPicture>
                     <source src="${item.videoSource}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <span class="duration">${item.videoDuration}</span>
+                <span class="duration">0:00</span>
             </div>
             <div class='d-flex justify-between'>
                 <span>${item.category}</span>
@@ -147,7 +158,50 @@ recordingsItems.forEach((item) => {
 });
 
 recordingsContent.innerHTML = listOfRecordings;
+
+// Dynamic duration of recordings
+document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('loadedmetadata', () => {
+        let durationElement = video.parentElement.querySelector('.duration');
+
+        let duration = video.duration;
+        let minutes = Math.floor(duration / 60);
+        let seconds = Math.floor(duration % 60).toString().padStart(2, '0');
+
+        durationElement.textContent = `${minutes}:${seconds}`;
+    });
+});
+
+// Play control for recordings
+document.querySelectorAll('.video-overlay').forEach(overlay => {
+    let video = overlay.parentElement.querySelector('video');
+    let play = overlay.querySelector('.vPlay');
+
+    overlay.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            play.style.display = 'none';
+            video.classList.remove('video-grayscale');
+        } else {
+            video.pause();
+            play.style.display = 'block';
+            video.classList.add('video-grayscale');
+        }
+    });
+
+    video.addEventListener('pause', () => {
+        play.style.display = 'block';
+        video.classList.add('video-grayscale');
+    });
+
+    video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        play.style.display = 'block';
+        video.classList.add('video-grayscale');
+    });
+});
 // End of recordings
+
 
 // Footer hero content
 const footerContent = document.querySelector('.footer-hero-content');
@@ -158,14 +212,39 @@ heroItems.forEach((item) => {
     listOfFooterContent += `
         <ul>
             <li>
-                <a>${item.title}</a>
+                <a href="${item.url}">${item.title}</a>
             </li>
         </ul>
     `
 });
 
 footerContent.innerHTML = listOfFooterContent;
-// End of hero content
+
+// Modal
+const subscribeForm = document.querySelector('footer form');
+const subscribeModal = document.getElementById('subscribeModal');
+const closeSubscribeModal = document.getElementById('closeSubscribeModal');
+
+const handleSubmit = (event) => {
+    event.preventDefault(); // Sprečava ponovno učitavanje stranice
+    subscribeModal.style.display = 'block'; // Prikaz modala
+    document.getElementById('subscribe').value = ''; // Čišćenje polja
+};
+
+const handleCloseModal = () => {
+    subscribeModal.style.display = 'none'; // Zatvaranje modala
+};
+
+subscribeForm.addEventListener('submit', handleSubmit);
+closeSubscribeModal.addEventListener('click', handleCloseModal);
+
+window.onclick = (event) => {
+    if (event.target === subscribeModal) {
+        handleCloseModal(); // Zatvaranje modala ako se klikne izvan njega
+    }
+};
+
+// End of modal
 
 
 
@@ -196,18 +275,49 @@ likeDislikeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         const img = btn.querySelector('img');
 
-        // Check if alredy has that class
         if (img.classList.contains('brightness')) {
-            // If it does rimove 
             img.classList.remove('brightness');
         } else {
-            // Remove 'brightness'
             likeDislikeBtn.forEach((button) => {
                 const siblingImg = button.querySelector('img');
                 siblingImg.classList.remove('brightness');
             });
-            // Add 'brightness'
             img.classList.add('brightness');
         }
     });
 });
+
+// Dropdown
+const navItemsLevels = document.querySelectorAll('.mobile-nav li');
+const dropdown = document.querySelectorAll('.dropdown');
+
+navItemsLevels.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        dropdown.forEach((dropdownItem) => {
+            if (dropdownItem !== item.querySelector('.dropdown')) {
+                dropdownItem.classList.remove('active');
+            }
+        });
+
+        const dropdownMenu = item.querySelector('.dropdown');
+        if (dropdownMenu) {
+            dropdownMenu.classList.toggle('active');
+        }
+
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+    dropdown.forEach((dropdownItem) => {
+        dropdownItem.classList.remove('active');
+    });
+});
+
+
+// Current Year
+let currentYear = document.querySelector('.current-year');
+
+currentYear.textContent = new Date().getFullYear();
