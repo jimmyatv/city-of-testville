@@ -1,31 +1,31 @@
 // Hero Items list
 export const heroItems = [
     {
-        icon: './images/alert.webp',
+        icon: './images/alert.png',
         url: '/notices',
         title: 'Notices',
         subtitle: 'See all recent emergency notices'
     },
     {
-        icon: './images/bell.webp',
+        icon: './images/bell.png',
         url: '/subscribe',
         title: 'Subscribe',
         subtitle: 'Get notifications via email or SMS'
     },
     {
-        icon: './images/bill.webp',
+        icon: './images/bill.png',
         url: '/bills',
         title: 'Pay Bills',
         subtitle: 'Pay all municipal bills instantly'
     },
     {
-        icon: './images/issue.webp',
+        icon: './images/issue.png',
         url: '/non-emergency',
         title: '311',
         subtitle: 'Report any non-emergency issues'
     },
     {
-        icon: './images/truck.webp',
+        icon: './images/truck.png',
         url: '/street-cleaning',
         title: 'Street Cleaning',
         subtitle: 'Access the street cleaning schedule'
@@ -37,9 +37,9 @@ export const heroItems = [
 export const eventsItems = [
     {
         icon: './images/dateImg1.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'City Council Meeting',
         date: 'Monday, January 8, 2024',
         time: '7:00 PM',
@@ -47,9 +47,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg2.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'Food Policy Council Meeting',
         date: 'Friday, January 12, 2024',
         time: '4:00 PM',
@@ -57,9 +57,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg3.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'Misc. Matters Committee Meeting',
         date: 'Monday, January 15, 2024',
         time: '7:00 PM',
@@ -67,9 +67,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg1.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'City Council Meeting',
         date: 'Monday, January 8, 2024',
         time: '7:00 PM',
@@ -77,9 +77,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg2.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'Food Policy Council Meeting',
         date: 'Friday, January 12, 2024',
         time: '4:00 PM',
@@ -87,9 +87,9 @@ export const eventsItems = [
     },
     {
         icon: './images/dateImg3.webp',
-        icon2: './images/date.svg',
-        icon3: './images/clock.svg',
-        icon4: './images/location.svg',
+        icon2: './images/date.png',
+        icon3: './images/clock.png',
+        icon4: './images/location.png',
         title: 'Misc. Matters Committee Meeting',
         date: 'Monday, January 15, 2024',
         time: '7:00 PM',
