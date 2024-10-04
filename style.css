@@ -677,7 +677,7 @@ footer .footer-like {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #737373;
-    width: 50%;
+    width: 300px;
     min-height: 200px;
     border-radius: 8px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, .8);
@@ -695,7 +695,7 @@ footer .footer-like {
 .modal-content p {
     color: var(--primary);
     font-weight: 700;
-    font-size: 32px;
+    font-size: 20px;
 }
 
 .close {

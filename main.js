@@ -229,6 +229,8 @@ const handleSubmit = (event) => {
     event.preventDefault(); 
     subscribeModal.style.display = 'block'; 
     document.getElementById('subscribe').value = ''; 
+
+    setTimeout(handleCloseModal, 2000);
 };
 
 const handleCloseModal = () => {
