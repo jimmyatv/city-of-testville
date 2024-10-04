@@ -1,6 +1,6 @@
 import { heroItems, eventsItems, newsItems, recordingsItems } from "./data.js";
 
-const burger = document.querySelector('.burger');
+const burger = document.querySelector('.burger-menu');
 const mobileNav = document.querySelector('.mobile-nav');
 
 // SLIDER
@@ -113,7 +113,7 @@ let listOfNews = '';
 
 newsItems.forEach((item) => {
     listOfNews += `
-        <div>
+        <div class="overflow-hidden">
             <div>
                 <img src="${item.icon}" alt="${item.title}" loading="lazy" />
             </div>
@@ -140,7 +140,7 @@ recordingsItems.forEach((item) => {
         <div class="recording-item gap-10">
             <div class='relative'>
                 <div class="video-overlay">
-                    <img class="vPlay" src="./images/play.svg" />
+                    <img class="vPlay" src="./images/play.svg" alt="Play image" />
                 </div>
                 <video poster="${item.thumbnail}" class="video-grayscale" width="340" height="175" controlsList="nodownload noremoteplayback" disablePictureInPicture>
                     <source src="${item.videoSource}" type="video/mp4">

@@ -22,16 +22,16 @@
 
             <div class="searchContent d-flex justify-between align-items-center w-100">
                 <h2 class="headings">City of Testville</h2>
-                <form class="search relative d-flex align-items-center gap-6">
+                <form class="search relative d-flex align-items-center gap-10">
                     <label for="search" class="sr-only">Search</label>
                     <input type="text" id="search" name="search" aria-label="Search" />
-                    <button type="submit">
+                    <button type="submit" aria-label="Search">
                         <img src="./images/search.webp" alt="Search" />
                     </button>
                 </form>
             </div>
             <!-- burger menu -->
-            <button class="burger">
+            <button class="burger-menu" aria-label="Burger Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,13 +39,13 @@
         </div>
     </header>
     <!-- Nav bar -->
-    <nav class="container mobile-nav">
+    <nav class="container mobile-nav" role="navigation">
         <ul class="d-flex gap-20">
             <li>
                 <a href="/">Home</a>
             </li>
             <li>
-                <button>
+                <button aria-label="Government">
                     Government
                     <img src="./images/chevron-down.svg" alt="Chevron down" />
                 </button>
@@ -62,7 +62,7 @@
                 </ul>
             </li>
             <li>
-                <button>
+                <button aria-label="Boards">
                     Boards
                     <img src="./images/chevron-down.svg" alt="Chevron down" />
                 </button>
@@ -79,7 +79,7 @@
                 </ul>
             </li>
             <li>
-                <button>
+                <button aria-label="Departments">
                     Departments
                     <img src="./images/chevron-down.svg" alt="Chevron down" />
                 </button>
@@ -99,7 +99,7 @@
                 </ul>
             </li>
             <li>
-                <button>
+                <button aria-label="Community">
                     Community
                     <img src="./images/chevron-down.svg" alt="Chevron down" />
                 </button>
@@ -114,6 +114,9 @@
                         <a href="/community/resources">Resources</a>
                     </li>
                 </ul>
+            </li>
+            <li class="large-none">
+                <a href="/contact">Contact us</a>
             </li>
         </ul>
     </nav>
@@ -144,7 +147,7 @@
         <section class="upcoming-events container" id="upcoming-eventsId">
             <div class="d-flex justify-between align-items-center">
                 <h2 class="headings">Upcoming Events</h2>
-                <button class="btn-link">View All Events</button>
+                <button class="btn-link" aria-label="View All Events">View All Events</button>
             </div>
 
             <div class="upcoming-events-content"></div>
@@ -154,7 +157,7 @@
         <section class="news container" id="newsId">
             <div class="d-flex justify-between align-items-center">
                 <h2 class="headings">News</h2>
-                <button class="btn-link">View All Posts</button>
+                <button class="btn-link" aria-label="View All Posts">View All Posts</button>
             </div>
 
             <div class="news-content"></div>
@@ -164,7 +167,7 @@
         <section class="recordings container" id="recordingsId">
             <div class="d-flex justify-between align-items-center">
                 <h2 class="headings">Latest Recordings</h2>
-                <button class="btn-link">View All Videos</button>
+                <button class="btn-link" aria-label="View All Videos">View All Videos</button>
             </div>
 
             <div class="recordings-content"></div>
@@ -200,7 +203,7 @@
                                         <input type="email" name="email" id="email" required />
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn">Submit</button>
+                                        <button type="submit" class="btn" aria-label="Submit">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -217,10 +220,10 @@
         <div class="footer-like d-flex justify-between">
             <div class="d-flex gap-10 align-items-center like-dislike">
                 <span>Was this Page Helpful?</span>
-                <button>
+                <button aria-label="Like button">
                     <img src="./images/like.webp" alt="Like">
                 </button>
-                <button>
+                <button aria-label="Dislike button">
                     <img src="./images/dislike.webp" alt="Dislike">
                 </button>
             </div>
@@ -265,14 +268,15 @@
 
             <form>
                 <div class="subscribe-updates d-flex justify-center gap-6">
+                    <label for="subscribe" class="sr-only">Subscribe</label>
                     <input type="email" id="subscribe" name="subscribe" required />
-                    <button>Subscribe to Updates</button>
+                    <button aria-label="Subscribe to Updates">Subscribe to Updates</button>
                 </div>
             </form>
             <!-- Modal -->
             <div id="subscribeModal" class="modal">
                 <div class="modal-content relative">
-                    <span class="close" id="closeSubscribeModal">X</span>
+                    <span class="close" id="closeSubscribeModal"><img src="./images/close.svg" alt="Close button"></span>
                     <p>Thank you for subscribing!</p>
                 </div>
             </div>
