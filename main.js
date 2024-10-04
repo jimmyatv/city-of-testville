@@ -44,6 +44,8 @@ const resetAutoSlide = () => {
 burger.addEventListener('click', () => {
     burger.classList.toggle('is-active');
     mobileNav.classList.toggle('is-active');
+
+    document.body.classList.toggle('overflow-hidden');
 });
 // End of burger
 
